@@ -1,0 +1,60 @@
+{
+  "manifest_version": 2,
+  "name": "sMeta",
+  "homepage_url": "https://smeta.vn",
+  "version": "1.0",
+  "description": "sMeta.vn - Tiện ích quản lý tài khoản quảng cáo",
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "applications": {
+    "gecko": {
+      "id": "admin@smeta.vn"
+    }
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "access/icon/16.png",
+      "48": "access/icon/48.png",
+      "128": "access/icon/128.png"
+    }
+  },
+  "icons": {
+    "16": "access/icon/16.png",
+    "48": "access/icon/48.png",
+    "128": "access/icon/128.png"
+  },
+  "permissions": [
+    "tabs",
+    "storage",
+    "notifications",
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess",
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "js": [
+        "access/js/content-script.js"
+      ],
+      "css": [
+        "access/css/content.css"
+      ],
+      "matches": [
+        "https://*.facebook.com/ads/manager/*",
+        "https://*.facebook.com/adsmanager/*",
+        "https://*.facebook.com/billing_hub/*",
+        "https://*.facebook.com/ad_center/create/boostpost/*",
+        "http://*"
+      ],
+      "all_frames": true,
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    "*"
+  ]
+}
