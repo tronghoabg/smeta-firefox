@@ -18,7 +18,7 @@ function createPopupWindow () {
   console.log('create')
   browser.windows
     .create({
-      url: 'http://localhost:3000/app',
+      url: 'https://smeta.vn/app',
       type: 'popup',
       height: 600,
       width: 1200,
